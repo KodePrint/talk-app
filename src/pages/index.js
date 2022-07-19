@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import Wrapper from 'containers/Wrapper'
 import HelloContainer from 'containers/HelloContainer'
+import HomeSection from '../templates/HomeSection'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -15,9 +16,7 @@ export default function Home() {
       </Head>
 
       <Wrapper>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <HomeSection />
         <HelloContainer />
       </Wrapper>
 
