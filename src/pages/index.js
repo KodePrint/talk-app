@@ -17,7 +17,7 @@ export default function Home() {
 
       <Wrapper>
         <HomeSection />
-        <HelloContainer />
+        {/* <HelloContainer /> */}
       </Wrapper>
 
     </div>

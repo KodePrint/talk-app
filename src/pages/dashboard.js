@@ -6,6 +6,7 @@ const dashboard = () => {
   return (
     <Wrapper>
       <div className={styles.main}>
+
         <div className="left">
           <HeaderBar />
           <div className={styles.roomList}>
@@ -19,7 +20,10 @@ const dashboard = () => {
                   </div>
                   <div>
                     <span>Last Msj</span>
-                    <i>3</i>
+                    <div>
+                      <i>3</i>
+                      <i>V</i>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -32,7 +36,10 @@ const dashboard = () => {
                   </div>
                   <div>
                     <span>Last Msj</span>
-                    <i></i>
+                    <div>
+                      <i>3</i>
+                      <i>V</i>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -45,7 +52,10 @@ const dashboard = () => {
                   </div>
                   <div>
                     <span>Last Msj</span>
-                    <i></i>
+                    <div>
+                      <i>3</i>
+                      <i>V</i>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -58,7 +68,10 @@ const dashboard = () => {
                   </div>
                   <div>
                     <span>Last Msj</span>
-                    <i></i>
+                    <div>
+                      <i>3</i>
+                      <i>V</i>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -71,16 +84,28 @@ const dashboard = () => {
                   </div>
                   <div>
                     <span>Last Msj</span>
-                    <i>2</i>
+                    <div>
+                      <i>3</i>
+                      <i>V</i>
+                    </div>
                   </div>
                 </div>
               </li>
             </ul>
           </div>
         </div>
+
         <div className="right">
-          <div className="chat">
-            Chat
+          <div className={styles.chatBar}>
+            <div className="chatInfo">
+              <picture>
+                <img src="https://i.pravatar.cc/150?u=car" alt="Img" />
+              </picture>
+              <div>
+                <p>Chats</p>
+                <p>Inline: <b>5</b></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
