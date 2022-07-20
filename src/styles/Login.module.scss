@@ -1,0 +1,19 @@
+.login {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid rgba(255,255,255,.3);
+  h3 {
+    font-size: 24px;
+    margin-bottom: 18px;
+    gap: 18px;
+  } 
+  button {
+    border: none;
+    background: rgba(255,255,255,.3);
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 18px;
+    border-radius: 6px;
+  }
+}

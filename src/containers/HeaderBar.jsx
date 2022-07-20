@@ -1,27 +1,35 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from "next/router";
+import { supabase, logut } from 'services/supabase';
+import Image from 'next/image'
 // Import Custom Hooks
-import { useSessionUser } from 'hooks/useSessionUser';
-import { logut } from 'services/supabase';
+
 import styles from '../styles/dashboard.module.scss'
+import { getSupabaseUser } from 'services/get-auth-user';
 
 const HeaderBar = () => {
-  const { userSession, setUserSession } = useSessionUser();
   const [viewMenu, setViewMenu] = useState(false);
-
+  const [session, setSession] = useState({});
+  const router = useRouter();
+  
   const handleClickViewMenu = () => {
     setViewMenu(!viewMenu);
   }
-
+  
   const handleLogout = () => {
-    logut();
-    setUserSession({});
+    logut()
+    return router.push('/')
   }
+
+  useEffect(() => {
+    setSession(getSupabaseUser())
+  }, []);
 
   return (
     <nav className={styles.userBar}>
       <picture>
-        <img src={userSession.avatar} alt={userSession.userName} />
-        <p>{userSession.userName}</p>
+        <img src={session.avatar} alt={session.userName} />
+        <p>{session.userName}</p>
       </picture>
       <i>➕</i>
       <div>

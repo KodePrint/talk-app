@@ -14,8 +14,7 @@ export const loginWithGithub = async () => {
   let { user, session, error } = await supabase.auth.signIn({
       provider: 'github',
     }, 
-    {shouldCreateUser: true},
-    {redirectTo: 'http://localhost:3000/dashboard',}
+    {shouldCreateUser: true}
   )
   if (error) throw error
   return user

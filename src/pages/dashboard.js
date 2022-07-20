@@ -1,23 +1,16 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { isAuth } from "utils/isAuth";
 // Import Components
 import HeaderBar from "containers/HeaderBar";
 import Wrapper from "containers/Wrapper";
 // Import Custom Hooks
-import { useSessionUser } from "hooks/useSessionUser";
+
 import styles from "../styles/dashboard.module.scss";
+import { getSupabaseUser } from "services/get-auth-user";
 
 const dashboard = () => {
-
   const router = useRouter();
-  const { userSession } = useSessionUser();
-  // useEffect(() => {
-  //   if (!userSession.token) {
-  //     router.push("/");
-  //   } else {
-  //     router.push("/dashboard");
-  //   }
-  // }, [userSession]);
 
   return (
     <Wrapper>
@@ -130,3 +123,5 @@ const dashboard = () => {
 }
 
 export default dashboard;
+
+export const getServerSideProps = isAuth()

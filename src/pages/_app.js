@@ -1,14 +1,15 @@
+import { getSupabaseUser } from 'services/get-auth-user';
 // Import Context
-import { UserContextProvider } from 'context/userContext'
+import { AuthContextProvider } from 'context/AuthContext';
 // Import Custom Hooks
-import { useSessionUser } from 'hooks/useSessionUser'
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
+
   return (
-    <UserContextProvider>
+    <AuthContextProvider>
       <Component {...pageProps} />
-    </UserContextProvider>
+    </AuthContextProvider>
   )
 }
 
