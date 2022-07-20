@@ -1,0 +1,11 @@
+@use 'vars' as v;
+
+.wrapper {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  z-index: 1;
+}

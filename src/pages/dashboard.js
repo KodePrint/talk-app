@@ -1,8 +1,24 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+// Import Components
 import HeaderBar from "containers/HeaderBar";
 import Wrapper from "containers/Wrapper";
+// Import Custom Hooks
+import { useSessionUser } from "hooks/useSessionUser";
 import styles from "../styles/dashboard.module.scss";
 
 const dashboard = () => {
+
+  const router = useRouter();
+  const { userSession } = useSessionUser();
+  // useEffect(() => {
+  //   if (!userSession.token) {
+  //     router.push("/");
+  //   } else {
+  //     router.push("/dashboard");
+  //   }
+  // }, [userSession]);
+
   return (
     <Wrapper>
       <div className={styles.main}>

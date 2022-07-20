@@ -1,12 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
-
+// Import Components
 import Wrapper from 'containers/Wrapper'
 import HelloContainer from 'containers/HelloContainer'
 import HomeSection from '../templates/HomeSection'
+import ModalPortal from 'containers/ModalPortal'
+// Import Custom Hooks
+import { useSessionUser } from "hooks/useSessionUser";
+
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -15,11 +20,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* <ModalPortal>
+      </ModalPortal> */}
       <Wrapper>
         <HomeSection />
         {/* <HelloContainer /> */}
       </Wrapper>
-
+      <ModalPortal />
     </div>
   )
 }

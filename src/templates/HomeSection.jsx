@@ -1,13 +1,34 @@
+import { useEffect, use } from "react";
+import { useRouter } from "next/router";
 import {loginWithGithub, loginWithGoogle } from "services/supabase";
+// Import Custom Hooks
+import { useSessionUser } from "hooks/useSessionUser";
 
 const HomeSection = () => {
 
-  const handleGithubLogin = () => {
-    loginWithGithub()
+  const router = useRouter();
+  const { userSession, isLoading } = useSessionUser();
+
+  // useEffect(() => {
+  //   if (!userSession.token) {
+  //     router.push("/");
+  //   } else {
+  //     router.push("/dashboard");
+  //   }
+  // }, []);
+
+  const handleGithubLogin = async () => {
+    await loginWithGithub().then(user => {
+      console.log(user);
+    })
   }
-  const handleGoogleLogin = () => {
-    loginWithGoogle()
+  const handleGoogleLogin = async () => {
+    await loginWithGoogle().then(user => {
+      console.log(user);
+    })
   }
+
+  console.log(userSession);
 
   return (
     <>
